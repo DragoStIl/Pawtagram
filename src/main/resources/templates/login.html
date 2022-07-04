@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <title>register</title>
+    <link rel="stylesheet" href="css/register&login.css">
+    <th:block th:include="~{/fragments/head}"></th:block>
+</head>
+
+<body>
+
+<header th:replace="fragments/commons::nav"></header>
+
+
+    <div class="container">
+        <form class="register-box">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class field placeholder="Username">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class field placeholder="..........">
+            </div>
+
+            <div class="buttons">
+                    <button class="submit" type="submit">Log in</button>
+            </div>
+
+        </form>
+    </div>
+
+<footer th:replace="fragments/commons::footer"></footer>
+
+
+</body>
+
+</html>

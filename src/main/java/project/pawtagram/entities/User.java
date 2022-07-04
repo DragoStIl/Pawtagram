@@ -27,10 +27,10 @@ public class User {
     @Column
     private int age;
 
-    @OneToMany
+    @ManyToOne
     private Role role;
 
-    @OneToMany
+    @OneToMany(mappedBy = "owner")
     private Set<Pet> pets;
 
     public User() {

@@ -20,10 +20,10 @@ public class Pet {
     @ManyToOne
     private Type type;
 
-    @OneToMany
+    @ManyToOne
     private User owner;
 
-    @OneToMany
+    @OneToMany(mappedBy = "pet")
     private List<Comment> comments;
 
     public Pet() {

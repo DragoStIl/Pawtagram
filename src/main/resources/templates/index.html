@@ -1,52 +1,29 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawtagram</title>
-    <link rel="stylesheet" href="\css\style.css">
-<!--    <link rel="stylesheet" href="mobile.css">-->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/84cf192ba2.js" crossorigin="anonymous"></script>
-
+    <title>home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <th:block th:include="~{/fragments/head}"></th:block>
 </head>
 
 <body>
-    <!-- TOP -->
-    <nav class="main-nav">
-        <ul>
-            <li class="left">
-                <a href="/"><i class="fa-solid fa-paw"></i> Pawtagram</a>
-            </li>
-            <li class="right">
-                <a href="about.html">About</a>
-                <a href="#">Contacts</a>
-                <a href="#">Sign in</a>
-            </li>
-        </ul>
-    </nav>
+    <header th:replace="fragments/commons::nav"></header>
 
     <!-- choose content -->
     <div class="first-container">
         <div class="top">
             <div class="menu">
-                <img src="/img/pexels-дмитрий-пропадалин-9983475.jpg" alt="beast pic">
+                <img src="img/pexels-дмитрий-пропадалин-9983475.jpg" alt="beast pic">
                 <p>WOOF WOOF</p>
 
             </div>
             <div class="menu">
-                <img src="/img/cat pic.jpg" alt="cat pic">
+                <img src="img/cat pic.jpg" alt="cat pic">
                 <p>MEW MEW</p>
             </div>
             <div class="menu">
-                <img src="/img/pexels-christopher-conde-8162455.jpg" alt="dog pic">
+                <img src="img/pexels-christopher-conde-8162455.jpg" alt="dog pic">
                 <p>RAOR</p>
             </div>
         </div>
@@ -55,7 +32,7 @@
     <!-- ppls fav pic -->
     <div class="second-container">
         <div class="fav-pic">
-            <img src="/img/cat pic.jpg" alt="fav pic of the week">
+            <img src="img/cat pic.jpg" alt="fav pic of the week">
             <p>owner: Ivan Ivanov</p>
         </div>
         <div class="fav-pic-info">
@@ -103,16 +80,7 @@
 
     </div>
 
-    <footer>
-        <ul>
-            <li>
-                <a href="#">Contacts</a>
-                <a href="#">Contacts</a>
-                <a href="#">Contacts</a>
-            </li>
-        </ul>
-    </footer>
-    <!-- <script src="logic.js"></script> -->
+    <footer th:replace="fragments/commons::footer"></footer>
 </body>
 
 </html>
