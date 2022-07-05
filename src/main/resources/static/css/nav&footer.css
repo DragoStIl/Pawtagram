@@ -11,6 +11,11 @@ body{
     width: 100%;
     height: auto;
 }
+
+.page-content {
+    margin-bottom: 3rem;
+}
+
 p{
     font-family: 'Times New Roman', Times, serif;
 }
@@ -65,7 +70,7 @@ li.left i{
 
 footer{
 
-    position: static;
+    position: fixed;
     bottom: 0;
     width: 100%;
 

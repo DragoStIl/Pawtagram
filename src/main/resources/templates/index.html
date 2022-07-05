@@ -2,85 +2,33 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>index</title>
+    <meta charset="UTF-8">
     <th:block th:include="~{/fragments/head}"></th:block>
+
 </head>
-
 <body>
-    <header th:replace="fragments/commons::nav"></header>
 
-    <!-- choose content -->
-    <div class="first-container">
-        <div class="top">
-            <div class="menu">
-                <img src="img/pexels-дмитрий-пропадалин-9983475.jpg" alt="beast pic">
-                <p>WOOF WOOF</p>
+<header th:replace="fragments/commons::nav"></header>
 
+    <section id="main">
+        <div id="container">
+            <div class="first">
+                <h1>Hello and welcome to Pawtagram !</h1>
+                <h1>The social media where You can find and follow the cutest animals</h1>
             </div>
-            <div class="menu">
-                <img src="img/cat pic.jpg" alt="cat pic">
-                <p>MEW MEW</p>
-            </div>
-            <div class="menu">
-                <img src="img/pexels-christopher-conde-8162455.jpg" alt="dog pic">
-                <p>RAOR</p>
+        
+            <div class="second">
+                <p>
+                    You can join as pet owner and share some cool pictures of your animal and the story behind them,  or just as a person who love to see cute creatures.
+                </p>
             </div>
         </div>
-    </div>
+        
+    </section>
 
-    <!-- ppls fav pic -->
-    <div class="second-container">
-        <div class="fav-pic">
-            <img src="img/cat pic.jpg" alt="fav pic of the week">
-            <p>owner: Ivan Ivanov</p>
-        </div>
-        <div class="fav-pic-info">
-            <h2>The most loved picture of the week</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, placeat officiis repudiandae quasi
-                magnam, sapiente quis consequuntur accusamus maxime deserunt perspiciatis id voluptates maiores
-                repellendus necessitatibus non voluptatibus vel mollitia.</p>
-        </div>
-    </div>
 
-    <!-- interesting facts -->
-    <div class="third-container">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus eius
-            excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-            doloribus ratione!
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-            eius
-            excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-            doloribus ratione!
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-            eius
-            excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-            doloribus ratione!
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-            eius
-            excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-            doloribus ratione!
-        </p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus eius
-            excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-            doloribus ratione!
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-            eius
-            excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-            doloribus ratione!
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-            eius
-            excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-            doloribus ratione!
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-            eius
-            excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-            doloribus ratione!
-        </p>
-
-    </div>
-
-    <footer th:replace="fragments/commons::footer"></footer>
+<footer th:replace="fragments/commons::footer"></footer>
+    
 </body>
-
 </html>

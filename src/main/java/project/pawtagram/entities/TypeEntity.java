@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "types")
-public class Type {
+public class TypeEntity {
 
 
     @Id
@@ -17,7 +17,11 @@ public class Type {
     @Enumerated(EnumType.STRING)
     private AnimalType type;
 
-    public Type() {
+    public TypeEntity() {
+    }
+
+    public TypeEntity(AnimalType type) {
+        this.type = type;
     }
 
     public long getId() {

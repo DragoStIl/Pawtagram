@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <title>Pet Register</title>
+    <link rel="stylesheet" href="css/register&login.css">
+    <th:block th:include="~{/fragments/head}"></th:block>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <form class="register-box"
+              th:method="post"
+              th:action="@{/pet/add}"
+              th:object="${addPetDTO}">
+
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class field placeholder="Name"
+                       id="name"
+                       name="name"
+                       th:field="*{name}">
+            </div>
+
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" class field placeholder="Age"
+                       id="age"
+                       name="age"
+                       th:field="*{age}">
+            </div>
+
+            <div class="form-group">
+                <select id="type"
+                        name="type"
+                        th:field="*{type}"
+                        class="custom-select">
+                    <option value="">- Select your pet type -</option>
+                    <option
+                            th:each="t : ${types}"
+                            th:text="${t.type}"
+                            th:value="${t.type}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Picture</label>
+                <input type="url" class field placeholder="Some cool picture of your pet"
+                       id="imageUrl"
+                       name="imageUrl"
+                       th:field="*{imageUrl}">
+            </div>
+
+            <div class="buttons">
+
+                <form action="#">
+                    <button class="submit" type="submit">
+                        Get Started
+                    </button>
+                </form>
+
+                <form action="/templates/login.html">
+                    <button class="go-to-login">Sign in</button>
+                </form>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

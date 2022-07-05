@@ -18,7 +18,10 @@ public class Pet {
     private int age;
 
     @ManyToOne
-    private Type type;
+    private TypeEntity typeEntity;
+
+    @Column(nullable = false)
+    private String pictureUrl;
 
     @ManyToOne
     private User owner;
@@ -53,12 +56,12 @@ public class Pet {
         this.age = age;
     }
 
-    public Type getType() {
-        return type;
+    public TypeEntity getType() {
+        return typeEntity;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setType(TypeEntity typeEntity) {
+        this.typeEntity = typeEntity;
     }
 
     public User getOwner() {

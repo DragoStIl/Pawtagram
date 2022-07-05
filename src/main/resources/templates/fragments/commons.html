@@ -1,32 +1,58 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <ul th:if="${@loggedUser.id == 0}">
+                <li class="left">
+                    <a href="/"><i class="fa-solid fa-paw"></i> Pawtagram</a>
+                </li>
+                <li class="right">
+                    <a href="/about">About</a>
+                    <a href="/contacts">Contacts</a>
+                    <a href="/register">Register</a>
+                    <a href="/login">Login</a>
+                    <a href="#"><i class="fa-brands fa-earlybirds"></i></a>
+                    <a href="#"><i class="fa-solid fa-user"></i></a>
+                </li>
+            </ul>
+            <ul th:if="${@loggedUser.id > 0}">
+                <li class="left">
+                    <a href="/home"><i class="fa-solid fa-paw"></i> Pawtagram</a>
+                </li>
+                <li class="right">
+                    <a href="/pet/add">Register pet</a>
+                    <a href="/about">About</a>
+                    <a href="/contacts">Contacts</a>
+                    <a href="/logout">logout</a>
+                    <a href="/"><i class="fa-brands fa-earlybirds"></i></a>
+                    <a href="/"><i class="fa-solid fa-user"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <footer>
+        <li>
+            <a href="#">Up to top</a>
+        </li>
+        <li>
+            <a href="#">Contacts</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+    </footer>
+</body>
+</html>
 
 
-<header>
-    <nav class="main-nav">
-        <ul>
-            <li class="left">
-                <a href="/"><i class="fa-solid fa-paw"></i> Pawtagram</a>
-            </li>
-            <li class="right">
-                <a href="/about">About</a>
-                <a href="/contacts">Contacts</a>
-                <a href="/register">Register</a>
-                <a href="/login">Login</a>
-
-
-            </li>
-        </ul>
-    </nav>
-</header>
-
-<footer>
-    <li>
-        <a href="#">Up to top</a>
-    </li>
-    <li>
-        <a href="#">Contacts</a>
-    </li>
-    <li>
-        <a href="#">About</a>
-    </li>
-</footer>
 

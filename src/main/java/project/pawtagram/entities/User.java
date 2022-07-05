@@ -1,6 +1,8 @@
 package project.pawtagram.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Positive;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,7 +26,8 @@ public class User {
     @Column(name = "full_name")
     private String fullName;
 
-    @Column
+    @Column(nullable = false)
+    @Min(5)
     private int age;
 
     @ManyToOne
@@ -100,4 +103,6 @@ public class User {
     public void setPets(Set<Pet> pets) {
         this.pets = pets;
     }
+
+
 }

@@ -1,9 +1,6 @@
 package project.pawtagram.entities.dtos;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 public class UserRegisterDTO {
 
@@ -11,15 +8,24 @@ public class UserRegisterDTO {
     @Size(min = 3, max = 20)
     private String username;
 
+    @NotBlank
+    @Size(min = 4, max = 30)
+    private String fullName;
+
+    @NotNull
+    @Min(5)
+    private int age;
+
     @Email
     private String email;
 
+
     @NotBlank
-    @Min(3)
+    @Min(4)
     private String password;
 
     @NotBlank
-    @Min(3)
+    @Min(4)
     private String confirmPassword;
 
     public String getUsername() {
@@ -52,5 +58,21 @@ public class UserRegisterDTO {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
