@@ -18,7 +18,7 @@ public class AddPetDTO {
     private int age;
 
     @NotNull
-    private TypeEntity type;
+    private String type;
 
     @NotBlank
     private String imageUrl;
@@ -39,11 +39,11 @@ public class AddPetDTO {
         this.age = age;
     }
 
-    public TypeEntity getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeEntity type) {
+    public void setType(String type) {
         this.type = type;
     }
 

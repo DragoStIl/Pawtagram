@@ -3,13 +3,23 @@
 
 
 <head>
-    <title>Pet Register</title>
-    <link rel="stylesheet" href="css/register&login.css">
-    <th:block th:include="~{/fragments/head}"></th:block>
+    <title>Register</title>
+    <link rel="stylesheet" href="css/form_style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav&footer.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/84cf192ba2.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 
+<header th:replace="fragments/commons::nav"></header>
 
 
     <div class="container">
@@ -20,56 +30,49 @@
 
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" class field placeholder="Name"
+                <input type="text"
+                       class field placeholder="name"
                        id="name"
                        name="name"
                        th:field="*{name}">
             </div>
 
             <div class="form-group">
-                <label>Age</label>
-                <input type="number" class field placeholder="Age"
+                <label>age</label>
+                <input type="number"
+                       class field placeholder="how old is your beasty"
                        id="age"
                        name="age"
                        th:field="*{age}">
             </div>
 
             <div class="form-group">
-                <select id="type"
-                        name="type"
-                        th:field="*{type}"
-                        class="custom-select">
-                    <option value="">- Select your pet type -</option>
-                    <option
-                            th:each="t : ${types}"
-                            th:text="${t.type}"
-                            th:value="${t.type}">
-                    </option>
-                </select>
+                <label>Type</label>
+                <input type="text"
+                       class field placeholder="what type is your pet"
+                       id="type"
+                       name="type"
+                       th:field="*{type}">
             </div>
 
             <div class="form-group">
                 <label>Picture</label>
-                <input type="url" class field placeholder="Some cool picture of your pet"
+                <input type="text"
+                       class field placeholder="your pet picture"
                        id="imageUrl"
                        name="imageUrl"
                        th:field="*{imageUrl}">
             </div>
 
             <div class="buttons">
-
-                <form action="#">
-                    <button class="submit" type="submit">
-                        Get Started
-                    </button>
-                </form>
-
-                <form action="/templates/login.html">
-                    <button class="go-to-login">Sign in</button>
-                </form>
+                <button class="submit" typeEntity="submit">Join</button>
             </div>
 
         </form>
     </div>
+
+<footer th:replace="fragments/commons::footer"></footer>
+
+
 </body>
 </html>

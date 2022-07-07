@@ -4,7 +4,7 @@
 
 <head>
     <title>register</title>
-    <link rel="stylesheet" href="css/register&login.css">
+    <link rel="stylesheet" href="css/form_style.css">
     <th:block th:include="~{/fragments/head}"></th:block>
 </head>
 
@@ -28,18 +28,18 @@
             </div>
 
             <div class="form-group">
-                <label>Username</label>
+                <label>Full name</label>
                 <input type="text"
-                       class field placeholder="Username"
+                       class field placeholder="Full name"
                        id="fullName"
                        name="fullName"
                        th:field="*{fullName}">
             </div>
 
             <div class="form-group">
-                <label>Username</label>
+                <label>Age</label>
                 <input type="number"
-                       class field placeholder="Username"
+                       class field placeholder="Age"
                        id="age"
                        name="age"
                        th:field="*{age}">
