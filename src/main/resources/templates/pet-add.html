@@ -3,76 +3,58 @@
 
 
 <head>
-    <title>Register</title>
-    <link rel="stylesheet" href="css/form_style.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/nav&footer.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/84cf192ba2.js" crossorigin="anonymous"></script>
-
+    <title>Register-pet</title>
+    <link rel="stylesheet" href="css/forms.css">
+    <th:block th:include="~{/fragments/head}"></th:block>
 </head>
 
 <body>
 
 <header th:replace="fragments/commons::nav"></header>
 
-
     <div class="container">
-        <form class="register-box"
-              th:method="post"
-              th:action="@{/pet/add}"
-              th:object="${addPetDTO}">
+        <form
+                class="register-box"
+                th:method="post"
+                th:action="@{/pet}"
+                th:object="${addPetDTO}">
 
             <div class="form-group">
                 <label>Name</label>
-                <input type="text"
-                       class field placeholder="name"
-                       id="name"
-                       name="name"
+                <input type="text" class field placeholder="Name"
                        th:field="*{name}">
             </div>
 
             <div class="form-group">
-                <label>age</label>
-                <input type="number"
-                       class field placeholder="how old is your beasty"
-                       id="age"
-                       name="age"
+                <label>Age</label>
+                <input type="number" class field placeholder="Age"
                        th:field="*{age}">
             </div>
 
             <div class="form-group">
-                <label>Type</label>
-                <input type="text"
-                       class field placeholder="what type is your pet"
-                       id="type"
-                       name="type"
-                       th:field="*{type}">
+                <label>Image</label>
+                <input type="text" class field placeholder="Image"
+                       th:field="*{imageUrl}">
+
             </div>
 
             <div class="form-group">
-                <label>Picture</label>
-                <input type="text"
-                       class field placeholder="your pet picture"
-                       id="imageUrl"
-                       name="imageUrl"
-                       th:field="*{imageUrl}">
+                <label>Type</label>
+                <input type="text" class field placeholder="Type"
+                       th:field="*{type}">
             </div>
 
+
             <div class="buttons">
-                <button class="submit" typeEntity="submit">Join</button>
+                <button class="submit" type="submit" value="Register">Get Started</button>
             </div>
 
         </form>
     </div>
 
+
 <footer th:replace="fragments/commons::footer"></footer>
-
-
 </body>
+
+
 </html>
