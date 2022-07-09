@@ -33,20 +33,29 @@
 
             <div class="form-group">
                 <label>Image</label>
-                <input type="text" class field placeholder="Image"
+                <input type="url" class field placeholder="Image"
                        th:field="*{imageUrl}">
 
             </div>
 
             <div class="form-group">
                 <label>Type</label>
-                <input type="text" class field placeholder="Type"
-                       th:field="*{type}">
+                <select id="type"
+                        name="type"
+                        th:errorclass="is-invalid"
+                        class="form-control">
+                    <option value="">- Select a model -</option>
+                    <option
+                            th:each="t : ${types}"
+                            th:text="${t.type}"
+                            th:value="${t}">
+                    </option>
+                </select>
             </div>
 
 
             <div class="buttons">
-                <button class="submit" type="submit" value="Register">Get Started</button>
+                <button class="submit" type="submit">Add your pet</button>
             </div>
 
         </form>
