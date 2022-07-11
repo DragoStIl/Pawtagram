@@ -35,28 +35,30 @@
 
             <div class="form-group">
                 <label>Age</label>
-                <input type="number" class field placeholder="Age">
+                <input type="number" class field placeholder="Age"
+                       th:field="*{age}">
+
             </div>
 
             <div class="form-group">
                 <label>E-mail</label>
                 <input type="email"
                        class field placeholder="E-mail"
-                       th:field="*{email}">>
+                       th:field="*{email}">
             </div>
 
             <div class="form-group">
                 <label>Password</label>
                 <input type="password"
                        class field placeholder="Password"
-                       th:field="*{password}">>
+                       th:field="*{password}">
             </div>
 
             <div class="form-group">
                 <label>Confirm password</label>
                 <input type="password"
                        class field placeholder="Confirm password"
-                       th:field="*{confirmPassword}">>
+                       th:field="*{confirmPassword}">
             </div>
 
             <div class="buttons">

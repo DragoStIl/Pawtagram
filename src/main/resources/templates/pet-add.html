@@ -33,22 +33,21 @@
 
             <div class="form-group">
                 <label>Image</label>
-                <input type="url" class field placeholder="Image"
+                <input type="text" class field placeholder="Image"
                        th:field="*{imageUrl}">
 
             </div>
 
             <div class="form-group">
                 <label>Type</label>
-                <select id="type"
-                        name="type"
-                        th:errorclass="is-invalid"
+                <select id="typeId"
+                        name="typeId"
                         class="form-control">
                     <option value="">- Select a model -</option>
                     <option
                             th:each="t : ${types}"
                             th:text="${t.type}"
-                            th:value="${t}">
+                            th:value="${t.id}">
                     </option>
                 </select>
             </div>

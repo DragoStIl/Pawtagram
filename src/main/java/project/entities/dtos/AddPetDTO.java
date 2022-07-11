@@ -18,7 +18,7 @@ public class AddPetDTO {
     private int age;
 
     @NotNull
-    private TypeEntity type;
+    private long typeId;
 
     @NotBlank
     private String imageUrl;
@@ -39,12 +39,12 @@ public class AddPetDTO {
         this.age = age;
     }
 
-    public TypeEntity getType() {
-        return type;
+    public long getTypeId() {
+        return typeId;
     }
 
-    public void setType(TypeEntity type) {
-        this.type = type;
+    public void setTypeId(long typeId) {
+        this.typeId = typeId;
     }
 
     public String getImageUrl() {

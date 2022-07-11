@@ -43,7 +43,14 @@ public class PetController {
                          BindingResult bindingResult,
                          RedirectAttributes redirectAttributes){
 
-        if (bindingResult.hasErrors()){
+        if (bindingResult.hasErrors() ){
+            redirectAttributes.addFlashAttribute("addPetDTO", addPetDTO);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addPetDTO",
+                    bindingResult);
+            return "redirect:/pet";
+        }
+
+        if (!this.petService.addPet(addPetDTO)){
             redirectAttributes.addFlashAttribute("addPetDTO", addPetDTO);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addPetDTO",
                     bindingResult);
@@ -51,6 +58,7 @@ public class PetController {
         }
 
 
-        return "pet-add";
+
+        return "redirect:/";
     }
 }

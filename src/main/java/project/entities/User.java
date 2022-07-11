@@ -2,7 +2,9 @@ package project.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -10,7 +12,7 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(nullable = false, unique = true)
@@ -33,10 +35,10 @@ public class User {
     private Role role;
 
     @OneToMany(mappedBy = "owner")
-    private Set<Pet> pets;
+    private List<Pet> pets;
 
     public User() {
-        this.pets = new HashSet<>();
+        this.pets = new ArrayList<>();
     }
 
     public long getId() {
@@ -95,13 +97,11 @@ public class User {
         this.role = role;
     }
 
-    public Set<Pet> getPets() {
+    public List<Pet> getPets() {
         return pets;
     }
 
-    public void setPets(Set<Pet> pets) {
+    public void setPets(List<Pet> pets) {
         this.pets = pets;
     }
-
-
 }

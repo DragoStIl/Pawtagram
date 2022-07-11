@@ -78,4 +78,8 @@ public class AuthService {
     public void logout(){
         this.loggedUser.logout();
     }
+
+    public long loggedId(){
+        return this.loggedUser.getId();
+    }
 }

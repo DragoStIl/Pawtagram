@@ -11,17 +11,17 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
+    @Column()
     private String name;
 
-    @Column(nullable = false)
+    @Column()
     private int age;
 
     @ManyToOne
     private TypeEntity typeEntity;
 
-    @Column(nullable = false)
-    private String pictureUrl;
+    @Column(columnDefinition = "TEXT", unique = true)
+    private String imageUrl;
 
     @ManyToOne
     private User owner;
@@ -62,6 +62,14 @@ public class Pet {
 
     public void setType(TypeEntity typeEntity) {
         this.typeEntity = typeEntity;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public User getOwner() {
