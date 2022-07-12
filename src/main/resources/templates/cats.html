@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Feed</title>
+    <link rel="stylesheet" href="css/feed.css">
+    <th:block th:include="~{/fragments/head}"></th:block>
+
+</head>
+<body>
+
+<header th:replace="fragments/commons::nav"></header>
+
+
+<div class="container">
+    <div class="content">
+        <div class="image"
+             th:each="pet : ${catPics}">
+            <img th:src="${pet.imageUrl}" alt="none">
+        </div>
+    </div>
+</div>
+
+<footer th:replace="fragments/commons::footer"></footer>
+
+</body>
+</html>

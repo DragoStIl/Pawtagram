@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+
+}
+
+.image{
+    max-width: 400px;
+    display: grid;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+    margin-bottom: 40px;
+
+    height: 80%;
+    background: linear-gradient(to bottom, rgb(255, 106, 0), rgba(255, 106, 0, 0.523));
+    background-size: cover;
+    border-radius: 15px;
+    position: relative;
+}
+
+.add-comment{
+    padding-top: 5px;
+}
+.add-comment input{
+    width: 80%;
+}
+
+
+img{
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.comment{
+    padding-left: 10px;
+    margin: 7px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid;
+
+}
+
+.comment p, h3{
+    text-align: left;
+    margin: 0;
+}
+

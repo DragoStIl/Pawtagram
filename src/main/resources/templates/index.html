@@ -4,6 +4,7 @@
 <head>
     <title>index</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css">
     <th:block th:include="~{/fragments/head}"></th:block>
 
 </head>
@@ -11,21 +12,27 @@
 
 <header th:replace="fragments/commons::nav"></header>
 
-    <section class="main">
-        <div class="container">
+<section class="main">
+    <div class="container">
+        <div class="contact-box">
+            <div id="up"></div>
+
             <div class="first">
                 <h1>Hello and welcome to Pawtagram !</h1>
-                <h1>The social media where You can find and follow the cutest animals</h1>
+                <h1>The social media where You can find the cutest animals</h1>
             </div>
-        
+
             <div class="second">
                 <p>
-                    You can join as pet owner and share some cool pictures of your animal and the story behind them,  or just as a person who love to see cute creatures.
+                    You can join as pet owner and share some cool pictures of your animal and the story behind them or just as a person who love to see cute creatures.
                 </p>
             </div>
+            <div id="down"></div>
+
         </div>
-        
-    </section>
+
+    </div>
+</section>
 
 
 <footer th:replace="fragments/commons::footer"></footer>

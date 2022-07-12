@@ -57,15 +57,17 @@ public class PetService {
         return this.petRepository.findAll();
     }
 
-    public List<Pet> getAllExoticPics() {
-        List<Pet> exoticPets = this.getAllPetPics()
+    public List<Pet> getSpecificTypePics(String type) {
+        List<Pet> pets = this.getAllPetPics()
                 .stream()
                 .filter(p -> p.getType()
                         .getType().name()
-                        .equals("EXOTIC"))
+                        .equals(type))
                 .toList();
 
+        System.out.println();
 
-        return exoticPets;
+        return pets;
     }
+
 }

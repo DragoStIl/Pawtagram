@@ -1,15 +1,17 @@
-#main{
+.container{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 300px;
-    padding: 150px 0px;
+    height: auto;
+    padding: 25vh 0;
+
 }
 
-#container{
-    max-width: 850px;
+.contact-box{
+    max-width: 1000px;
+    height: 400px;
     display: grid;
 
     justify-content: center;
@@ -17,22 +19,49 @@
     text-align: center;
 
 
-    padding: 30px 40px;
-    height: 100%;
+    padding: 40px 40px;
+    height: 80%;
     background-size: cover;
-    border-radius: 15px;
-    position: relative;
-}
 
-h1{
-    font-size: 30px;
+    position: relative;
+
 }
 
 .first, .second{
-    background: linear-gradient(to right, rgba(255, 106, 0, 0.644), rgba(176, 219, 114));
-    /* background-color: rgb(176, 219, 114); */
-    border-radius: 10px;
+    background: linear-gradient(to top, rgba(255, 106, 0, 0.49), rgba(255, 224, 194));
+    border-radius: 15px;
 
 }
 
+.first{
+    background: linear-gradient(to bottom, rgba(255, 106, 0, 0.49), rgba(255, 224, 194));
+    margin-bottom: 30px;
+
+}
+
+
+#up, #down{
+
+    width: 100px;
+    height: 120px;
+    position: absolute;
+    border-width: 7px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+#up{
+    top: 0;
+    border-top-style: groove;
+    border-left-style: groove;
+}
+
+#down{
+    bottom: 0;
+    right: 0;
+    border-bottom-style: groove;
+    border-right-style: groove;
+
+}
 

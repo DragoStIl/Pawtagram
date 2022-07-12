@@ -14,16 +14,16 @@
     <div class="page-content">
         <div class="first-container">
             <div class="top">
-                <div class="menu">
+                <div class="menu" onclick="goToLink('dogs')">
                     <img src="img/pexels-дмитрий-пропадалин-9983475.jpg" alt="beast pic">
                     <p>WOOF WOOF</p>
 
                 </div>
-                <div class="menu">
+                <div class="menu" onclick="goToLink('cats')">
                     <img src="img/cat pic.jpg" alt="cat pic">
                     <p>MEW MEW</p>
                 </div>
-                <div class="menu">
+                <div class="menu" onclick="goToLink('exotic')">
                     <img src="img/pexels-christopher-conde-8162455.jpg" alt="dog pic">
                     <p>RAOR</p>
                 </div>
@@ -34,55 +34,33 @@
         <div class="second-container">
             <div class="fav-pic">
                 <img src="img/cat pic.jpg" alt="fav pic of the week">
-                <p>owner: Ivan Ivanov</p>
             </div>
             <div class="fav-pic-info">
                 <h2>The most loved picture of the week</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, placeat officiis repudiandae quasi
                     magnam, sapiente quis consequuntur accusamus maxime deserunt perspiciatis id voluptates maiores
                     repellendus necessitatibus non voluptatibus vel mollitia.</p>
+                <p id="owner">Owner: Ivan Ivanov</p>
             </div>
         </div>
 
         <!-- interesting facts -->
         <div class="third-container">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus eius
-                excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-                doloribus ratione!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-                eius
-                excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-                doloribus ratione!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-                eius
-                excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-                doloribus ratione!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-                eius
-                excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-                doloribus ratione!
-            </p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus eius
-                excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-                doloribus ratione!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-                eius
-                excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-                doloribus ratione!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-                eius
-                excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-                doloribus ratione!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet fuga ipsam est temporibus. Quasi natus
-                eius
-                excepturi inventore amet quaerat aliquid soluta quos accusamus exercitationem. Nesciunt, ipsa? Vero,
-                doloribus ratione!
+            <h1>Interesting information</h1>
+            <p>
+                Котките живеят в близост до хората от преди поне 3500 години (въпреки че не са изцяло опитомени като кучетата). В Древен Египет котките са били използвани за пазачи на складираното зърно от мишки и други гризачи, като наказанието за убита котка в Древен Египет е било смърт. В наше време котките са едни от най-разпространените домашни любимци.
             </p>
 
         </div>
     </div>
 
     <footer th:replace="fragments/commons::footer"></footer>
+
+    <script>
+        function goToLink(link){
+            location.href= link
+        }
+    </script>
 </body>
 
 </html>

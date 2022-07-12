@@ -17,8 +17,6 @@
     height: 340px;
 }
 
-
-
 .menu{
     padding: 0px 10px;
     position: relative;
@@ -26,6 +24,12 @@
 
 
 }
+
+.menu img{
+    border-radius: 100px;
+    width: 100%;
+}
+
 .menu p{
     opacity: 0;
     visibility: hidden;
@@ -54,19 +58,38 @@
     opacity: 100%;
 }
 
-/* FAV PIC CONTAINE */
+
+/* FAV PIC CONTAINER */
 .second-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     position: relative;
     border-bottom: 4px groove;
-}
-/* .fav-pic img{
-} */
+    padding: 40px 50px;
+    margin: 30px 50px;
+    border-bottom: 4px groove;
+    border-top: 4px groove;
+    border-radius: 20px;
 
-.fav-pic p{
+
+}
+
+.fav-pic {
     position: relative;
-    text-align: left;
-    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+
+}
+.fav-pic-info, .fav-pic, .third-container{
+    margin: 0 40px;
+
+}
+#owner{
+    margin-top: 30px;
+    text-decoration: underline;
 }
 
