@@ -59,6 +59,6 @@ public class PetController {
 
 
 
-        return "redirect:/";
+        return "redirect:/home";
     }
 }

@@ -18,7 +18,7 @@ public class FeedController {
     @GetMapping("/all")
     public String allPics(Model model){
 
-        model.addAttribute("allPics", this.petService.getAllPetPics());
+        model.addAttribute("pics", this.petService.getAllPetPics());
 
         return "all";
     }
@@ -26,25 +26,25 @@ public class FeedController {
     @GetMapping("/dogs")
     public String dogPics(Model model){
 
-        model.addAttribute("dogPics", this.petService.getSpecificTypePics("DOG"));
+        model.addAttribute("pics", this.petService.getSpecificTypePics("DOG"));
 
-        return "dogs";
+        return "all";
     }
 
     @GetMapping("/cats")
     public String catPics(Model model){
 
-        model.addAttribute("catPics", this.petService.getSpecificTypePics("CAT"));
+        model.addAttribute("pics", this.petService.getSpecificTypePics("CAT"));
 
-        return "cats";
+        return "all";
     }
 
     @GetMapping("/exotic")
     public String exoticPics(Model model){
 
-        model.addAttribute("exoticPics", this.petService.getSpecificTypePics("EXOTIC"));
+        model.addAttribute("pics", this.petService.getSpecificTypePics("EXOTIC"));
 
-        return "exotic";
+        return "all";
     }
 
 }

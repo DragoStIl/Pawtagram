@@ -30,6 +30,10 @@
             </div>
         </div>
 
+        <div id="all" onclick="goToLink('all')">
+            <p>I love them all !</p>
+        </div>
+
         <!-- ppls fav pic -->
         <div class="second-container">
             <div class="fav-pic">
@@ -57,9 +61,9 @@
     <footer th:replace="fragments/commons::footer"></footer>
 
     <script>
-        function goToLink(link){
-            location.href= link
-        }
+    function goToLink(link){
+        location.href= link
+    }
     </script>
 </body>
 
