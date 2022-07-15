@@ -83,9 +83,7 @@ footer{
     bottom: 10px;
     right: 10px;
 }
-footer li{
-    background-color: #ff6a00;
+footer a i{
+    background-color: #ff7700;
     border-radius: 25px;
-
-
 }
