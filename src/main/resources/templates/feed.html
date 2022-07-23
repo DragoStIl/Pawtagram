@@ -2,14 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Feed</title>
-    <link rel="stylesheet" href="css/feed.css">
     <th:block th:include="~{/fragments/head}"></th:block>
+    <link rel="stylesheet" href="css/border.css">
+    <link rel="stylesheet" href="css/feed.css">
 
 </head>
-<body>
-
+    <body id="body">
     <header th:replace="fragments/commons::nav"></header>
-
 
     <div class="container">
         <div class="content">
@@ -21,6 +20,6 @@
     </div>
 
     <footer th:replace="fragments/commons::footer"></footer>
+    </body>
 
-</body>
 </html>

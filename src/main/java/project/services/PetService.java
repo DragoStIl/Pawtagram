@@ -45,9 +45,8 @@ public class PetService {
             return false;
         }
         Pet pet = mapper.map(addPetDTO, Pet.class);
-        pet.setType(this.typeRepository.findById(addPetDTO.getTypeId()).get());
+        pet.setType(this.typeRepository.findById(addPetDTO.getType()).get());
         pet.setOwner(this.userRepository.findById(this.authService.loggedId()).get());
-//        pet.setId(this.petRepository.count() + 1);
         this.petRepository.save(pet);
         return true;
     }

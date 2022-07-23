@@ -1,26 +1,36 @@
 package project.controllers;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import project.entities.Pet;
 import project.repositories.PetRepository;
 import project.services.PetService;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class FeedController {
 
 
     private final PetService petService;
-    public FeedController(PetRepository petRepository, PetService petService) {
+    public FeedController(PetService petService) {
         this.petService = petService;
     }
+
 
     @GetMapping("/all")
     public String allPics(Model model){
 
         model.addAttribute("pics", this.petService.getAllPetPics());
 
-        return "all";
+        return "feed";
     }
 
     @GetMapping("/dogs")
@@ -28,7 +38,7 @@ public class FeedController {
 
         model.addAttribute("pics", this.petService.getSpecificTypePics("DOG"));
 
-        return "all";
+        return "feed";
     }
 
     @GetMapping("/cats")
@@ -36,7 +46,7 @@ public class FeedController {
 
         model.addAttribute("pics", this.petService.getSpecificTypePics("CAT"));
 
-        return "all";
+        return "feed";
     }
 
     @GetMapping("/exotic")
@@ -44,7 +54,7 @@ public class FeedController {
 
         model.addAttribute("pics", this.petService.getSpecificTypePics("EXOTIC"));
 
-        return "all";
+        return "feed";
     }
 
 }

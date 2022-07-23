@@ -34,7 +34,7 @@ public class User {
     @ManyToOne
     private Role role;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Pet> pets;
 
     public User() {
