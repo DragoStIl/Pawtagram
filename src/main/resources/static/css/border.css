@@ -50,7 +50,22 @@ li{
 /* right side */
 li.right{
     position: absolute;
-    right: 0px;
+    right: 50px;
+}
+
+#logout form button{
+    background-color: transparent;
+    color: #293A80;
+    border: none;
+    cursor: pointer;
+
+}
+#logout form button:hover{
+    color: #FDDA16;
+}
+li.last{
+    position: absolute;
+    right: 5px;
 }
 
 a{

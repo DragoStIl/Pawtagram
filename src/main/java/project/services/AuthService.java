@@ -1,16 +1,19 @@
 package project.services;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import project.entities.dtos.LoginDTO;
 import project.entities.dtos.UserRegisterDTO;
 import project.entities.Role;
 import project.entities.User;
 import project.repositories.RoleRepository;
 import project.repositories.UserRepository;
-import project.session.LoggedUser;
 
-import javax.validation.Valid;
 import java.util.Optional;
 
 @Service
@@ -18,14 +21,16 @@ public class AuthService {
 
     private final UserRepository userRepository;
     private final ModelMapper mapper;
-    private final LoggedUser loggedUser;
     private final RoleRepository roleRepository;
+    private final UserDetailsService userDetailsService;
+    private final PasswordEncoder passwordEncoder;
 
-    public AuthService(UserRepository userRepository, ModelMapper mapper, LoggedUser loggedUser, RoleRepository roleRepository) {
+    public AuthService(UserRepository userRepository, ModelMapper mapper, RoleRepository roleRepository, UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.mapper = mapper;
-        this.loggedUser = loggedUser;
         this.roleRepository = roleRepository;
+        this.userDetailsService = userDetailsService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public boolean register(UserRegisterDTO registerDTO){
@@ -45,6 +50,7 @@ public class AuthService {
             return false;
         }
         User newUser = mapper.map(registerDTO, User.class);
+        newUser.setPassword(passwordEncoder.encode(registerDTO.getPassword()));
 
         Optional<Role> role = this.roleRepository.findById(1L);
         newUser.setRole(role.get());
@@ -54,32 +60,20 @@ public class AuthService {
         return true;
     }
 
-    public boolean login(@Valid LoginDTO loginDTO) {
+    private void login(User user){
+        UserDetails userDetails =
+                userDetailsService.loadUserByUsername(user.getUsername());
 
-        Optional<User> byUsername = this.userRepository.findByUsername(loginDTO.getUsername());
+        Authentication auth =
+                new UsernamePasswordAuthenticationToken(
+                        userDetails,
+                        userDetails.getPassword(),
+                        userDetails.getAuthorities()
+                );
 
-        if (byUsername.isEmpty()){
-            return false;
-        }
-
-        if (!byUsername.get().getPassword().equals(loginDTO.getPassword())){
-            return false;
-        }
-
-        this.loggedUser.login(byUsername.get());
-        return true;
-
+        SecurityContextHolder.
+                getContext().
+                setAuthentication(auth);
     }
 
-    public boolean isLogged(){
-        return loggedUser.getId() > 0;
-    }
-
-    public void logout(){
-        this.loggedUser.logout();
-    }
-
-    public long loggedId(){
-        return this.loggedUser.getId();
-    }
 }

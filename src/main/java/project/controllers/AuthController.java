@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import project.entities.dtos.LoginDTO;
 import project.entities.dtos.UserRegisterDTO;
 import project.services.AuthService;
 
@@ -26,10 +25,6 @@ public class AuthController {
         return new UserRegisterDTO();
     }
 
-    @ModelAttribute("loginDTO")
-    public LoginDTO initLoginDTO(){
-        return new LoginDTO();
-    }
 
     @GetMapping("/register")
     public String register(){
@@ -55,36 +50,5 @@ public class AuthController {
         return "login";
     }
 
-    @PostMapping("/login")
-    public String login(@Valid LoginDTO loginDTO,
-                        BindingResult bindingResult,
-                        RedirectAttributes redirectAttributes){
 
-        if (bindingResult.hasErrors()){
-
-            redirectAttributes.addFlashAttribute("loginDTO", loginDTO);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.loginDTO",
-                    bindingResult);
-
-            return "redirect:/login";
-        }
-
-        if (!this.authService.login(loginDTO)){
-            redirectAttributes.addFlashAttribute("loginDTO", loginDTO);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.loginDTO",
-                    bindingResult);
-
-            return "redirect:/login";
-        }
-
-
-
-        return "redirect:/home";
-    }
-
-    @GetMapping("/logout")
-    public String logout(){
-        this.authService.logout();
-        return "redirect:/";
-    }
 }
