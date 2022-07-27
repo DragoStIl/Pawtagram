@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User</title>
+    <th:block th:include="~{/fragments/head}"></th:block>
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+<header th:replace="fragments/commons::nav"></header>
+
+
+<div class="container">
+    <div class="box" th:object="${user}">
+
+        <div class="imgBx">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="content">
+            <div id="info" class="text-group">
+                <p>Username - <span th:text="*{username}">Drago </span></p>
+                <p>Name - <span th:text="*{fullName}">Dragomir</span></p>
+                <p><span th:text="*{age}">22</span> years old</p>
+            </div>
+            <div id="data" class="form-group">
+                <p>posts <br><span th:text="*{ownedAnimals}"></span></p>
+                <p>pics <br><span th:text="*{postedPictures}"></span></p>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+</body>
+
+
+</html>

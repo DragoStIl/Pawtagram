@@ -1,5 +1,7 @@
 package project.controllers;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -41,7 +43,8 @@ public class PetController {
     @PostMapping("/pet")
     public String addPet(@Valid AddPetDTO addPetDTO ,
                          BindingResult bindingResult,
-                         RedirectAttributes redirectAttributes){
+                         RedirectAttributes redirectAttributes,
+                         @AuthenticationPrincipal UserDetails userDetails){
 
         if (bindingResult.hasErrors() ){
             redirectAttributes.addFlashAttribute("addPetDTO", addPetDTO);
@@ -50,7 +53,7 @@ public class PetController {
             return "redirect:/pet";
         }
 
-        if (!this.petService.addPet(addPetDTO)){
+        if (!this.petService.addPet(addPetDTO, userDetails)){
             redirectAttributes.addFlashAttribute("addPetDTO", addPetDTO);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addPetDTO",
                     bindingResult);

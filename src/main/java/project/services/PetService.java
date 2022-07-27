@@ -1,6 +1,7 @@
 package project.services;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import project.entities.Pet;
 import project.entities.TypeEntity;
@@ -12,7 +13,6 @@ import project.repositories.UserRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class PetService {
@@ -39,14 +39,14 @@ public class PetService {
         return types;
     }
 
-    public boolean addPet(AddPetDTO addPetDTO){
+    public boolean addPet(AddPetDTO addPetDTO, UserDetails userDetails){
         Optional<Pet> byImageUrl = this.petRepository.findByImageUrl(addPetDTO.getImageUrl());
         if(byImageUrl.isPresent()){
             return false;
         }
         Pet pet = mapper.map(addPetDTO, Pet.class);
         pet.setType(this.typeRepository.findById(addPetDTO.getType()).get());
-//        pet.setOwner(this.userRepository.findById(this.authService.loggedId()).get());
+        pet.setOwner(this.userRepository.findByUsername(userDetails.getUsername()).orElseThrow());
         this.petRepository.save(pet);
         return true;
     }

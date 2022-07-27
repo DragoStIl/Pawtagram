@@ -76,4 +76,14 @@ public class AuthService {
                 setAuthentication(auth);
     }
 
+    public User currentUser(String username){
+        return this.userRepository.findByUsername(username).get();
+    }
+
+    public int postedPictures(String username) {
+        User user = currentUser(username);
+//        user.getPets().stream()
+        //todo cycle thru all pets, get their pictures and return the count
+        return 0;
+    }
 }
