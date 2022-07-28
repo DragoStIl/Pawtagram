@@ -35,7 +35,6 @@ public class PetService {
 
         List<TypeEntity> types = new ArrayList<>(typeRepository.findAll());
 
-        System.out.println();
         return types;
     }
 

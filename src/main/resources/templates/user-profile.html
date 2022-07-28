@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>User</title>
+    <title>User-profile</title>
     <th:block th:include="~{/fragments/head}"></th:block>
     <link rel="stylesheet" href="css/profile.css">
 </head>
@@ -25,9 +25,22 @@
                 <p><span th:text="*{age}">22</span> years old</p>
             </div>
             <div id="data" class="form-group">
-                <p>posts <br><span th:text="*{ownedAnimals}"></span></p>
-                <p>pics <br><span th:text="*{postedPictures}"></span></p>
+                <p>Pets count <br><span th:text="*{ownedAnimals}"></span></p>
+                <p>Posted pictures <br><span th:text="*{postedPictures}"></span></p>
             </div>
+        </div>
+
+        <div class="pet-select">
+            <label>Your pets</label>
+            <select id="type"
+                    name="type">
+                <option value="" selected>pet</option>
+                <option
+                        th:each="p : ${pets}"
+                        th:text="${p.name}"
+                        th:value="${p.id}">
+                </option>
+            </select>
         </div>
 
 

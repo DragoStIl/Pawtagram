@@ -24,7 +24,7 @@
     height: 80%;
     background: linear-gradient(to bottom, #f3a333, #f45f14);
     background-size: cover;
-    border-radius: 15px;
+    border-radius: 40px;
     position: relative;
 }
 .form-group{

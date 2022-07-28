@@ -68,6 +68,8 @@ public class AuthController {
         userView.setPostedPictures(this.authService.postedPictures(username));
 
         model.addAttribute("user", userView);
+        model.addAttribute("pets", userView.getPets());
+        System.out.println();
         return "user-profile";
     }
 

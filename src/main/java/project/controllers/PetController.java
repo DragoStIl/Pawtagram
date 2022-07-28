@@ -33,8 +33,8 @@ public class PetController {
     @GetMapping("/pet")
     public String addPet(Model model){
 
-        if (!model.containsAttribute("addOfferModel")){
-            model.addAttribute("addOfferModel", new AddPetDTO());
+        if (!model.containsAttribute("addPetDto")){
+            model.addAttribute("addPetDto", new AddPetDTO());
         }
         model.addAttribute("types", petService.getTypes());
         return "pet-add";
