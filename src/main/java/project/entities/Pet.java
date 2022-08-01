@@ -31,8 +31,6 @@ public class Pet {
     @ManyToOne
     private User owner;
 
-    @OneToMany(mappedBy = "pet", fetch = FetchType.EAGER)
-    private List<Picture> pictures;
 
 
 
@@ -95,11 +93,4 @@ public class Pet {
         this.typeEntity = typeEntity;
     }
 
-    public List<Picture> getPictures() {
-        return pictures;
-    }
-
-    public void setPictures(List<Picture> pictures) {
-        this.pictures = pictures;
-    }
 }

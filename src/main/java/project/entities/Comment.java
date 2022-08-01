@@ -20,9 +20,6 @@ public class Comment {
     @ManyToOne
     private User author;
 
-    @ManyToOne
-    private Picture picture;
-
     public Comment() {
     }
 
@@ -58,11 +55,4 @@ public class Comment {
         this.author = author;
     }
 
-    public Picture getPicture() {
-        return picture;
-    }
-
-    public void setPicture(Picture picture) {
-        this.picture = picture;
-    }
 }

@@ -66,7 +66,7 @@ public class PetController {
     }
 
 
-//    @GetMapping("/pet-profile")
+//    @GetMapping("/pet-profile/{id}")
 //    public String petProfile(@PathVariable long id, Model model){
 //        Pet byId = this.petService.findById(id);
 //
@@ -75,13 +75,12 @@ public class PetController {
 //        return "redirect:/pet-profile";
 //    }
 
-    @GetMapping("/pet-profile")
-    public String petProfile(Model model){
-        Pet byId = this.petService.findById(1);
 
-
-        model.addAttribute("pet", byId);
+    @GetMapping("/pet-profile/{id}")
+    public String profile(@PathVariable long id, Model model){
+        model.addAttribute("petProfile", this.petService.findById(id));
         return "redirect:/pet-profile";
     }
+
 
 }
