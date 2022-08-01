@@ -68,4 +68,7 @@ public class PetService {
         return pets;
     }
 
+    public Pet findById(long id) {
+        return this.petRepository.findById(id).get();
+    }
 }

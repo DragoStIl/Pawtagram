@@ -1,7 +1,10 @@
 package project.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -16,15 +19,22 @@ public class User {
     private long id;
 
     @Column(nullable = false, unique = true)
+    @Size(min = 2, max = 20)
     private String username;
 
     @Column(nullable = false, unique = true)
+    @NotBlank
+    @Email
     private String email;
 
     @Column(nullable = false)
+    @Size(min = 4)
+    @NotBlank
     private String password;
 
-    @Column(name = "full_name")
+    @Column(name = "full_name", nullable = false)
+    @NotBlank
+    @Size(min = 2, max = 20)
     private String fullName;
 
     @Column(nullable = false)

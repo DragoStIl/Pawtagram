@@ -32,9 +32,10 @@
 
         <div class="pet-select">
             <label>Your pets</label>
-            <select id="type"
-                    name="type">
-                <option value="" selected>pet</option>
+            <select id="pet-name"
+                    name="pey-name"
+                    onchange="goToLink()">
+                <option value="0" selected>pet</option>
                 <option
                         th:each="p : ${pets}"
                         th:text="${p.name}"
@@ -48,7 +49,16 @@
     </div>
 </div>
 
-
+    <script>
+        function goToLink(){
+            var id = document.getElementById("pet-name");
+            var value = id.value;
+            var link = "/pet-profile/"
+            if (value > 0){
+                location.href = link.concat(value)
+            }
+        }
+    </script>
 
 </body>
 

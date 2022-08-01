@@ -21,7 +21,7 @@ public class Comment {
     private User author;
 
     @ManyToOne
-    private Pet pet;
+    private Picture picture;
 
     public Comment() {
     }
@@ -58,11 +58,11 @@ public class Comment {
         this.author = author;
     }
 
-    public Pet getPet() {
-        return pet;
+    public Picture getPicture() {
+        return picture;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setPicture(Picture picture) {
+        this.picture = picture;
     }
 }

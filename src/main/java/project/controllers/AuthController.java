@@ -69,7 +69,6 @@ public class AuthController {
 
         model.addAttribute("user", userView);
         model.addAttribute("pets", userView.getPets());
-        System.out.println();
         return "user-profile";
     }
 

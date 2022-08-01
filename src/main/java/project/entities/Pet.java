@@ -1,6 +1,9 @@
 package project.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -11,23 +14,27 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column()
+    @Column(nullable = false)
+    @Size(min = 2, max = 20)
     private String name;
 
-    @Column()
+    @Column(nullable = false)
+    @Min(1)
     private int age;
 
     @ManyToOne
     private TypeEntity typeEntity;
 
-    @Column(columnDefinition = "TEXT", unique = true)
+    @Column(columnDefinition = "TEXT", unique = true, nullable = false)
     private String imageUrl;
 
     @ManyToOne
     private User owner;
 
-    @OneToMany(mappedBy = "pet")
-    private List<Comment> comments;
+    @OneToMany(mappedBy = "pet", fetch = FetchType.EAGER)
+    private List<Picture> pictures;
+
+
 
     public Pet() {
     }
@@ -80,11 +87,19 @@ public class Pet {
         this.owner = owner;
     }
 
-    public List<Comment> getComments() {
-        return comments;
+    public TypeEntity getTypeEntity() {
+        return typeEntity;
     }
 
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
+    public void setTypeEntity(TypeEntity typeEntity) {
+        this.typeEntity = typeEntity;
+    }
+
+    public List<Picture> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(List<Picture> pictures) {
+        this.pictures = pictures;
     }
 }
