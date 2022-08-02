@@ -1,5 +1,6 @@
 package project.controllers;
 
+import org.springframework.boot.Banner;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,8 @@ import javax.validation.Valid;
 public class PetController {
 
     private PetService petService;
+
+    private long petId = 0;
 
     public PetController(PetService petService) {
         this.petService = petService;
@@ -66,12 +69,32 @@ public class PetController {
         return "redirect:/home";
     }
 
+    @GetMapping("/pet-profiles/{id}")
+    public String petProfile(@PathVariable String id, Model model){
 
+        petId = Long.parseLong(id);
 
-    @GetMapping("/pet-profile/{id}")
-    public String profile(@PathVariable long id, Model model){
-        model.addAttribute("petProfile", this.petService.findById(id));
-        return "redirect:/pet-profile";
+        model.addAttribute("pet", this.petService.findById(petId));
+
+        System.out.println();
+        return "redirect:/pet-profiles";
     }
 
+    @GetMapping("/pet-profiles")
+    public String basicProfile(Model model){
+
+        if(petId == 0){
+            return "redirect:/home";
+        }
+
+
+        if(!model.containsAttribute("pet")){
+            model.addAttribute("pet", this.petService.findById(petId));
+        }
+
+
+
+
+        return "pet-profiles";
+    }
 }

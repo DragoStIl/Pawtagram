@@ -33,7 +33,7 @@
         <div class="pet-select">
             <label>Your pets</label>
             <select id="pet-name"
-                    name="pey-name"
+                    name="pet-name"
                     onchange="goToLink()">
                 <option value="0" selected>pet</option>
                 <option
@@ -51,14 +51,17 @@
 
     <script>
         function goToLink(){
+
             var id = document.getElementById("pet-name");
             var value = id.value;
-            var link = "/pet-profile/"
-            console.log("the value is cat")
-            if (value > 0){
+            var link = "pet-profiles/"
 
+            if (value > 0){
                 location.href = link.concat(value)
+                console.log("the value is: " + link.concat(value))
+
             }
+
         }
     </script>
 

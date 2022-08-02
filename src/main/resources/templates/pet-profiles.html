@@ -1,36 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Pet-profile</title>
     <th:block th:include="~{/fragments/head}"></th:block>
     <link rel="stylesheet" href="css/profile.css">
-
+    <title>Pet profile</title>
 </head>
-
 <body>
 
-<header th:replace="fragments/commons::nav"></header>
-
+    <header th:replace="fragments/commons::nav"></header>
 
 
     <div class="container">
-        <div class="box" th:object="${petProfile}">
+        <div class="box" th:object="${pet}">
 
             <div class="picBx">
                 <img th:src="*{imageUrl}" alt="none">
-
             </div>
 
             <div class="content">
                 <div id="info" class="text-group">
-                    <p>Name - <span >asd</span></p>
-                    <p> Years - <span >22 </span></p>
+                    <p>Name - <span th:text="*{name}"></span></p>
+                    <p> Years - <span th:text="*{age}"></span></p>
                 </div>
                 <div id="data" class="form-group">
-                    <p>Pictures - <span >asdasd</span></p>
+                    <p>Picutres - <span>asdasd</span></p>
                 </div>
 
-                <div class="button" onclick="goToLink('home')">
+                <div class="button" onclick="goToLink()">
                     <i class="fa-solid fa-circle-plus"></i>
                     <span class="add">Add picture</span>
                 </div>
@@ -39,6 +36,8 @@
 
     </div>
 
+
+
     <script>
         function goToLink(link){
             location.href= link
@@ -46,6 +45,4 @@
     </script>
 
 </body>
-
-
 </html>
