@@ -54,7 +54,9 @@
             var id = document.getElementById("pet-name");
             var value = id.value;
             var link = "/pet-profile/"
+            console.log("the value is cat")
             if (value > 0){
+
                 location.href = link.concat(value)
             }
         }

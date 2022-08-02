@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import project.entities.Pet;
 import project.entities.dtos.AddPetDTO;
 import project.services.PetService;
 
@@ -62,18 +61,11 @@ public class PetController {
             return "redirect:/pet";
         }
 
+
+
         return "redirect:/home";
     }
 
-
-//    @GetMapping("/pet-profile/{id}")
-//    public String petProfile(@PathVariable long id, Model model){
-//        Pet byId = this.petService.findById(id);
-//
-//
-//        model.addAttribute("pet", byId);
-//        return "redirect:/pet-profile";
-//    }
 
 
     @GetMapping("/pet-profile/{id}")
@@ -81,6 +73,5 @@ public class PetController {
         model.addAttribute("petProfile", this.petService.findById(id));
         return "redirect:/pet-profile";
     }
-
 
 }
