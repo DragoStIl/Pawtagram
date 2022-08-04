@@ -8,12 +8,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import project.entities.Pet;
+import project.entities.Photo;
 import project.entities.dtos.UserRegisterDTO;
 import project.entities.Role;
 import project.entities.User;
 import project.repositories.RoleRepository;
 import project.repositories.UserRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -82,8 +85,11 @@ public class AuthService {
 
     public int postedPictures(String username) {
         User user = currentUser(username);
-//        user.getPets().stream()
-        //todo cycle thru all pets, get their pictures and return the count
-        return 0;
+        int sum = 0;
+        List<Pet> pets = user.getPets();
+        for (Pet pet : pets) {
+            sum += pet.getPhotos().size();
+        }
+        return sum;
     }
 }

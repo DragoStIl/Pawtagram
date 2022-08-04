@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import project.entities.Pet;
 import project.entities.TypeEntity;
 import project.entities.dtos.AddPetDTO;
+import project.entities.views.PetView;
 import project.repositories.PetRepository;
 import project.repositories.TypeRepository;
 import project.repositories.UserRepository;
@@ -70,5 +71,11 @@ public class PetService {
 
     public Pet findById(long id) {
         return this.petRepository.findById(id).get();
+    }
+
+    public PetView getPetView(long petId) {
+        Pet pet = findById(petId);
+        PetView petView = new PetView(pet.getName(), pet.getAge(), pet.getImageUrl(), pet.getPhotos().size());
+        return petView;
     }
 }

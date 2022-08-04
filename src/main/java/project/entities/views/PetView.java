@@ -4,14 +4,18 @@ public class PetView {
 
     private String name;
     private int age;
+
+    private String imageUrl;
     private int picNumber;
+
 
     public PetView() {
     }
 
-    public PetView(String name, int age, int picNumber) {
+    public PetView(String name, int age, String imageUrl, int picNumber) {
         this.name = name;
         this.age = age;
+        this.imageUrl = imageUrl;
         this.picNumber = picNumber;
     }
 
@@ -37,5 +41,13 @@ public class PetView {
 
     public void setPicNumber(int picNumber) {
         this.picNumber = picNumber;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

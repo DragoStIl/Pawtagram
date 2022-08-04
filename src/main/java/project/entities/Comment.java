@@ -20,7 +20,18 @@ public class Comment {
     @ManyToOne
     private User author;
 
+    @ManyToOne
+    private Photo photo;
+
     public Comment() {
+    }
+
+    public Photo getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
     }
 
     public long getId() {

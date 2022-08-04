@@ -14,11 +14,11 @@
             <form class="register-box"
                   th:method="post"
                   th:action="@{/add-pic}"
-                  th:object="${addPictureDTO}">
+                  th:object="${addPhotoDTO}">
 
                 <img id="picture" src="" alt="">
                 <div class="form-group">
-                    <label>Username</label>
+                    <label>Picture Url</label>
                     <input onchange="dynamic()"
                            id="url" type="text"
                            name="picture"

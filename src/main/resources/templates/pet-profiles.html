@@ -24,10 +24,10 @@
                     <p> Years - <span th:text="*{age}"></span></p>
                 </div>
                 <div id="data" class="form-group">
-                    <p>Picutres - <span>asdasd</span></p>
+                    <p>Pictures - <span th:text="*{picNumber}"></span></p>
                 </div>
 
-                <div class="button" onclick="goToLink()">
+                <div class="button" onclick="goToLink('add-pic')">
                     <i class="fa-solid fa-circle-plus"></i>
                     <span class="add">Add picture</span>
                 </div>

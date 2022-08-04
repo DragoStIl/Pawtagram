@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -31,10 +32,14 @@ public class Pet {
     @ManyToOne
     private User owner;
 
+    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Photo> photos;
+
 
 
 
     public Pet() {
+        this.photos = new ArrayList<>();
     }
 
     public long getId() {
@@ -93,4 +98,11 @@ public class Pet {
         this.typeEntity = typeEntity;
     }
 
+    public List<Photo> getPhotos() {
+        return photos;
+    }
+
+    public void setPhotos(List<Photo> photos) {
+        this.photos = photos;
+    }
 }
