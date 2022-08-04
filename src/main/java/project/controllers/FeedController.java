@@ -3,10 +3,7 @@ package project.controllers;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import project.entities.Pet;
 import project.repositories.PetRepository;
 import project.services.PetService;
@@ -55,6 +52,12 @@ public class FeedController {
         model.addAttribute("pics", this.petService.getSpecificTypePics("EXOTIC"));
 
         return "feed";
+    }
+
+    @GetMapping("/pet/{id}")
+    public String petAlbum(@PathVariable long id, Model model){
+        model.addAttribute("pics", this.petService.getSpecificPetPics(id));
+        return "redirect:/feed";
     }
 
 }

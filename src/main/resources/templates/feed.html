@@ -12,8 +12,14 @@
     <div class="container">
         <div class="content">
             <div class="image"
-                 th:each="pet : ${pics}">
-                <img th:src="${pet.imageUrl}" alt="none">
+                 th:each="pic : ${pics}">
+                <p>Name - <span th:text="*{pic.pet.name}"></span></p>
+                <img th:src="${pic.url}" alt="none">
+                <div class="comments">
+                    <p th:each="comment : ${pic.comments}">
+                        <span th:text="*{comment.author.username}"></span><span>: </span><br><span th:text="*{comment.text}"></span>
+                    </p>
+                </div>
             </div>
         </div>
     </div>

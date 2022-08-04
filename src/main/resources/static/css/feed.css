@@ -30,12 +30,13 @@
     position: relative;
 }
 
-.add-comment{
-    padding-top: 5px;
+.comments p{
+    border-bottom: 1px solid black;
+    margin: 10px 20px;
+    padding: 0 15px;
+    text-align: left;
 }
-.add-comment input{
-    width: 80%;
-}
+
 
 
 img{
@@ -44,16 +45,4 @@ img{
     border-radius: 15px;
 }
 
-.comment{
-    padding-left: 10px;
-    margin: 7px;
-    padding-bottom: 3px;
-    border-bottom: 2px solid;
-
-}
-
-.comment p, h3{
-    text-align: left;
-    margin: 0;
-}
 

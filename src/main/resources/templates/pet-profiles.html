@@ -22,6 +22,7 @@
                 <div id="info" class="text-group">
                     <p>Name - <span th:text="*{name}"></span></p>
                     <p> Years - <span th:text="*{age}"></span></p>
+                    <p> Id - <span th:text="*{id}"></span></p>
                 </div>
                 <div id="data" class="form-group">
                     <p>Pictures - <span th:text="*{picNumber}"></span></p>
@@ -30,6 +31,16 @@
                 <div class="button" onclick="goToLink('add-pic')">
                     <i class="fa-solid fa-circle-plus"></i>
                     <span class="add">Add picture</span>
+                </div>
+
+                <div class="button" onclick="goToLink('add-pic')">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <span class="add">Add picture</span>
+                </div>
+
+                <div class="button" id="album" onclick="goToAlbum()">
+                    <i class="fa-solid fa-images"></i>
+                    <span class="add">Go to album</span>
                 </div>
             </div>
         </div>
@@ -40,9 +51,18 @@
 
     <script>
         function goToLink(link){
-            location.href= link
+            location.href= link;
+        }
+
+        function goToAlbum(){
+        var id = ([[${pet.id}]])
+        var link = "pet/"
+        location.href = link.concat(id);
         }
     </script>
+
+
+
 
 </body>
 </html>

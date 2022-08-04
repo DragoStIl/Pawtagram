@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import project.entities.Pet;
+import project.entities.Photo;
 import project.entities.TypeEntity;
 import project.entities.dtos.AddPetDTO;
 import project.entities.views.PetView;
@@ -51,22 +52,32 @@ public class PetService {
         return true;
     }
 
-    public List<Pet> getAllPetPics() {
-
-        return this.petRepository.findAll();
+    public List<Photo> getAllPetPics() {
+        return getPictures(this.petRepository.findAll());
     }
 
-    public List<Pet> getSpecificTypePics(String type) {
-        List<Pet> pets = this.getAllPetPics()
+
+    public List<Photo> getSpecificPetPics(long id) {
+        return this.petRepository.findById(id).get().getPhotos();
+    }
+
+    public List<Photo> getSpecificTypePics(String type) {
+        List<Pet> pets = this.petRepository.findAll()
                 .stream()
                 .filter(p -> p.getType()
                         .getType().name()
                         .equals(type))
                 .toList();
 
-        System.out.println();
+        return getPictures(pets);
+    }
 
-        return pets;
+    private List<Photo> getPictures(List<Pet> pets) {
+        List<Photo> photos = new ArrayList<>();
+        for (Pet pet : pets) {
+            photos.addAll(pet.getPhotos());
+        }
+        return photos;
     }
 
     public Pet findById(long id) {
@@ -75,7 +86,6 @@ public class PetService {
 
     public PetView getPetView(long petId) {
         Pet pet = findById(petId);
-        PetView petView = new PetView(pet.getName(), pet.getAge(), pet.getImageUrl(), pet.getPhotos().size());
-        return petView;
+        return new PetView(pet.getId(), pet.getName(), pet.getAge(), pet.getImageUrl(), pet.getPhotos().size());
     }
 }

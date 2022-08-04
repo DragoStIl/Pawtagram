@@ -24,10 +24,10 @@ public class Photo {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Pet pet;
 
-    @OneToMany(mappedBy = "photo")
+    @OneToMany(mappedBy = "photo", fetch = FetchType.EAGER)
     private List<Comment> comments;
 
     public Photo() {

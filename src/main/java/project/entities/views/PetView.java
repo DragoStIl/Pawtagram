@@ -2,6 +2,7 @@ package project.entities.views;
 
 public class PetView {
 
+    private long id;
     private String name;
     private int age;
 
@@ -12,11 +13,20 @@ public class PetView {
     public PetView() {
     }
 
-    public PetView(String name, int age, String imageUrl, int picNumber) {
+    public PetView(long id, String name, int age, String imageUrl, int picNumber) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.imageUrl = imageUrl;
         this.picNumber = picNumber;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
