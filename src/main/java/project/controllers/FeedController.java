@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Controller
 public class FeedController {
 
-
+    private long petId;
     private final PetService petService;
     public FeedController(PetService petService) {
         this.petService = petService;
@@ -56,8 +56,17 @@ public class FeedController {
 
     @GetMapping("/pet/{id}")
     public String petAlbum(@PathVariable long id, Model model){
-        model.addAttribute("pics", this.petService.getSpecificPetPics(id));
+
+        petId = id;
+
         return "redirect:/feed";
+    }
+
+    @GetMapping("/feed")
+    public String basicMapper(Model model){
+        model.addAttribute("pics", this.petService.getSpecificPetPics(petId));
+
+        return "feed";
     }
 
 }

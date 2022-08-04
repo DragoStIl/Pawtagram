@@ -30,12 +30,35 @@
     position: relative;
 }
 
+.add-comment{
+    margin: 0 15px;
+    padding: 10px 0;
+    border-bottom: 3px groove ;
+
+}
+
+.submit-comment{
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+}
+.submit-comment i{
+    cursor: pointer;
+    color:#293A80;
+}
+.submit-comment i:hover{
+    color: #FDDA16;
+}
+
 .comments p{
     border-bottom: 1px solid black;
     margin: 10px 20px;
     padding: 0 15px;
     text-align: left;
+    font-size: 20px;
+
 }
+
 
 
 

@@ -15,9 +15,20 @@
                  th:each="pic : ${pics}">
                 <p>Name - <span th:text="*{pic.pet.name}"></span></p>
                 <img th:src="${pic.url}" alt="none">
+
+                <div class="add-comment">
+                    <input type="text" class="input-comment"
+                           placeholder="Your comment">
+
+                    <button class="submit-comment"><i class="fa-solid fa-comment-medical"></i></button>
+                </div>
+
                 <div class="comments">
                     <p th:each="comment : ${pic.comments}">
-                        <span th:text="*{comment.author.username}"></span><span>: </span><br><span th:text="*{comment.text}"></span>
+                        <span th:text="*{comment.author.username}"></span>
+                        <span>: </span>
+                        <br>
+                        <span class=""  th:text="*{comment.text}"></span>
                     </p>
                 </div>
             </div>
