@@ -57,6 +57,8 @@ public class FeedController {
     @GetMapping("/pet/{id}")
     public String petAlbum(@PathVariable long id, Model model){
 
+        //TODO check if the id belongs to the logged user, else return to user profile page
+
         petId = id;
 
         return "redirect:/feed";

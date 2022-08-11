@@ -33,10 +33,7 @@ public class PetService {
     }
 
     public List<TypeEntity> getTypes() {
-
-
         List<TypeEntity> types = new ArrayList<>(typeRepository.findAll());
-
         return types;
     }
 

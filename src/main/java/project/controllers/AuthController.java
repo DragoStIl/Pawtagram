@@ -64,7 +64,6 @@ public class AuthController {
         User user = authService.currentUser(username);
         UserView userView = mapper.map(user, UserView.class);
         userView.setOwnedAnimals(user.getPets().size());
-        //todo implement picture entity, connect it with pet entity
         userView.setPostedPictures(this.authService.postedPictures(username));
 
         model.addAttribute("user", userView);

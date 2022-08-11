@@ -21,20 +21,24 @@
 
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" class field placeholder="Name"
-                       th:field="*{name}">
+                <input type="text"
+                       class field placeholder="Name"
+                       th:field="*{name}"
+                       minlength="2" maxlength="10" required>
             </div>
 
             <div class="form-group">
                 <label>Age</label>
-                <input type="number" class field placeholder="Age"
-                       th:field="*{age}">
+                <input type="number"
+                       class field placeholder="Age"
+                       th:field="*{age}"
+                       min="1" required>
             </div>
 
             <div class="form-group">
                 <label>Image</label>
                 <input type="text" class field placeholder="Image"
-                       th:field="*{imageUrl}">
+                       th:field="*{imageUrl}" required>
 
             </div>
 
@@ -42,7 +46,8 @@
                 <label>Type</label>
                 <select id="type"
                         name="type"
-                        class="form-control">
+                        class="form-control"
+                        required min="1">
                     <option value="">Select animal group</option>
                     <option
                             th:each="t : ${types}"
