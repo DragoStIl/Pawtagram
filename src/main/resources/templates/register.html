@@ -23,6 +23,7 @@
                 <label>Username</label>
                 <input type="text"
                        class field placeholder="Username"
+                       name="username"
                        th:field="*{username}"
                        minlength="3" maxlength="10" required>
             </div>
@@ -30,6 +31,7 @@
             <div class="form-group">
                 <label>Full name</label>
                 <input type="text"
+                       name="fullName"
                        class field placeholder="Full name"
                 th:field="*{fullName}"
                 minlength="4" maxlength="30" required>
@@ -37,7 +39,7 @@
 
             <div class="form-group">
                 <label>Age</label>
-                <input type="number" class field placeholder="Age"
+                <input type="number" name="age" class field placeholder="Age"
                        th:field="*{age}"
                 min="1" required>
 
@@ -47,12 +49,14 @@
                 <label>E-mail</label>
                 <input type="email"
                        class field placeholder="E-mail"
+                       name="email"
                        th:field="*{email}" required>
             </div>
 
             <div class="form-group">
                 <label>Password</label>
                 <input type="password"
+                       name="password"
                        class field placeholder="Password"
                        th:field="*{password}"
                        minlength="4" required>
@@ -61,6 +65,7 @@
             <div class="form-group">
                 <label>Confirm password</label>
                 <input type="password"
+                       name="confirmPassword"
                        class field placeholder="Confirm password"
                        th:field="*{confirmPassword}"
                        minlength="4" required>
