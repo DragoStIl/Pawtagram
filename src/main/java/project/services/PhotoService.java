@@ -12,7 +12,7 @@ import java.util.Random;
 public class PhotoService {
 
     private final PhotoRepository photoRepository;
-    private PetService PetService;
+    private final PetService PetService;
 
     public PhotoService(PhotoRepository photoRepository, project.services.PetService petService) {
         this.photoRepository = photoRepository;
