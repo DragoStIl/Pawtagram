@@ -28,7 +28,7 @@ public class SecurityConfiguration {
                 //define which requests are allowed and which not
                 .authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .antMatchers("/").permitAll()
+                .antMatchers("/", "/about").permitAll()
                 //everybody can go to these pages
                 .antMatchers( "/login", "/register").anonymous()
                 .anyRequest().authenticated()

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <title>register</title>
+    <link rel="stylesheet" href="css/forms.css">
+    <th:block th:include="~{/fragments/head}"></th:block>
+</head>
+
+<body>
+
+<header th:replace="fragments/commons::nav"></header>
+
+<div class="container">
+    <form
+            class="register-box"
+            th:method="post"
+            th:action="@{/contacts}"
+            th:object="${contactMessageDTO}">
+
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text"
+                   class field placeholder="Username"
+                   name="username"
+                   th:field="*{username}"
+                   minlength="3" maxlength="10" required>
+        </div>
+
+
+        <div class="form-group">
+            <label>E-mail</label>
+            <input type="email"
+                   class field placeholder="E-mail"
+                   name="email"
+                   th:field="*{email}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Full name</label>
+            <input type="text"
+                   name="subject"
+                   class field placeholder="subject"
+                   th:field="*{subject}"
+                   minlength="4" maxlength="30" required>
+        </div>
+
+        <div class="form-group">
+            <label>E-mail</label>
+            <input type="text"
+                   class field placeholder="Description"
+                   name="text"
+                   th:field="*{text}" required>
+        </div>
+
+
+        <div class="buttons">
+            <button class="submit" type="submit">Get Started</button>
+        </div>
+
+    </form>
+</div>
+
+
+</body>
+
+
+</html>

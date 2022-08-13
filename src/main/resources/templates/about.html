@@ -1,55 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="css/nav&footer.css">
-    <link rel="stylesheet" href="css/register&login.css">
-
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/84cf192ba2.js" crossorigin="anonymous"></script>
+    <title>index</title>
+    <link rel="stylesheet" href="css/index.css">
+    <th:block th:include="~{/fragments/head}"></th:block>
 
 </head>
-
 <body>
 
-    <nav class="main-nav">
-        <ul>
-            <li class="left">
-                <a href="welcome.html"><i class="fa-solid fa-paw"></i> Pawtagram</a>
-            </li>
-            <li class="right">
-                <a href="about.html">About</a>
-                <a href="#">Contacts</a>
-                <a href="register.html">Sign in</a>
-            </li>
-        </ul>
-    </nav>
+<header th:replace="fragments/commons::nav"></header>
 
-    <div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure necessitatibus incidunt deleniti perspiciatis
-            et
-            tenetur, sequi possimus aspernatur reprehenderit recusandae quos debitis laborum impedit consequatur maiores
-            adipisci sit molestiae quae.</p>
+<section class="main">
+    <div class="container" id="about">
+        <div class="contact-box">
+            <div id="up"></div>
+
+            <div class="first">
+                <h1>About this place</h1>
+            </div>
+
+            <div class="second">
+                <p>
+                    I have created this place with idea to let people able to see some cute animals or let them show their beloved pets. <br>
+                    There are no constraints about how many pictures You can link to specific animal or how many pets You can register. <br>
+                    This place is to spread love not war. The whole idea was to make people forget about their problems for a bit and make them smile because...
+                    come on everybody loves little cute creatures. <br>
+                </p>
+
+                <p>
+                    Of course there is a plenty of work still and soon there will be more cool thinks like giving likes to a picture, get some useful tips from
+                    other pet owners who can help you with teaching your beloved animal some tricks and many more.
+                </p>
+
+                <p class="rules">
+                    <b>I can only ask people to be mature enough to follow some simple rules.</b><br>
+                    1 - DON`T UPLOAD UNAPPROPRIATED PICTURES ! <br>
+                    2 - DON`T COMMENT THINKS THAT YOU WON`T LIKE TO SEE ON YOUR PICTURES !
+                </p>
+
+                <p>
+                    If You have some good ideas to share, have problems with the user experience of some kind, there is <a href="/contacts">Contact</a>  page where you can find my e-mail to contact
+                </p>
+            </div>
+            <div id="down"></div>
+
+        </div>
+
     </div>
+</section>
 
-    <footer>
-        <ul>
-            <li>
-                <a href="#">Contacts</a>
-                <a href="#">Contacts</a>
-                <a href="#">Contacts</a>
-            </li>
-        </ul>
-    </footer>
+
 
 </body>
-
 </html>

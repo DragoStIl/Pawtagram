@@ -5,6 +5,9 @@ import project.entities.Photo;
 import project.entities.dtos.AddPhotoDTO;
 import project.repositories.PhotoRepository;
 
+import java.util.Optional;
+import java.util.Random;
+
 @Service
 public class PhotoService {
 

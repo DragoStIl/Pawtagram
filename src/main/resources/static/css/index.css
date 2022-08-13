@@ -8,6 +8,10 @@
     padding: 25vh 0;
 
 }
+#about{
+    padding: 7vh 0;
+
+}
 
 .contact-box{
     max-width: 1000px;
@@ -37,6 +41,10 @@
     background: linear-gradient(to bottom, rgba(255, 106, 0, 0.49), rgba(255, 224, 194));
     margin-bottom: 30px;
 
+}
+
+.second{
+    padding: 10px;
 }
 
 

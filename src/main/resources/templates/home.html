@@ -35,16 +35,15 @@
         </div>
 
         <!-- ppls fav pic -->
-        <div class="second-container">
+        <div class="second-container" th:object="${photo}">
             <div class="fav-pic">
-                <img src="images/cat pic.jpg" alt="fav pic of the week">
+                <img th:src="*{url}" alt="fav pic of the week">
             </div>
-            <div class="fav-pic-info">
-                <h2>The most loved picture of the week</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, placeat officiis repudiandae quasi
-                    magnam, sapiente quis consequuntur accusamus maxime deserunt perspiciatis id voluptates maiores
-                    repellendus necessitatibus non voluptatibus vel mollitia.</p>
-                <p id="owner">Owner: Ivan Ivanov</p>
+            <div class="fav-pic-info" >
+                <h2>Coming soon</h2>
+                <p th:text="*{description}"></p>
+                <p id="owner">Owner: <span>Your name here</span></p>
+                <p id="pet-name">Pet name: <span>Your pet name here</span></p>
             </div>
         </div>
 
@@ -52,7 +51,7 @@
         <div class="third-container">
             <h1>Interesting information</h1>
             <p>
-                Котките живеят в близост до хората от преди поне 3500 години (въпреки че не са изцяло опитомени като кучетата). В Древен Египет котките са били използвани за пазачи на складираното зърно от мишки и други гризачи, като наказанието за убита котка в Древен Египет е било смърт. В наше време котките са едни от най-разпространените домашни любимци.
+                Cats are believed to be the only mammals who don't taste sweetness. Cats are nearsighted, but their peripheral vision and night vision are much better than that of humans. Cats can jump up to six times their length.
             </p>
 
         </div>
