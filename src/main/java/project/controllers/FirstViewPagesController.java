@@ -3,13 +3,13 @@ package project.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import project.entities.Photo;
-import project.services.PhotoService;
 
 @Controller
 public class FirstViewPagesController {
 
-
+    
     @GetMapping("/")
     public String index(){
         return "index";
@@ -36,4 +36,6 @@ public class FirstViewPagesController {
 
         return "contacts";
     }
+
+
 }
